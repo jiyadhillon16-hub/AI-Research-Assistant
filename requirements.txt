@@ -29,4 +29,5 @@ youtube_transcript_api
 unstructured
 pytube
 numexpr
+torchvision
 huggingface_hub
