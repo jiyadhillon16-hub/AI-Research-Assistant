@@ -244,7 +244,7 @@ arxiv_wrapper = ArxivAPIWrapper(top_k_results=1,doc_content_chars_max=250)
 
 arxiv = ArxivQueryRun(api_wrapper=arxiv_wrapper)
 
-search = DuckDuckGoSearchRun(name="Search")
+search = DuckDuckGoSearchRun(name="search")
 
 tools = [search, wiki, arxiv]
 
