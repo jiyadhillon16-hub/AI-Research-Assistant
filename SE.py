@@ -361,7 +361,10 @@ if prompt := st.chat_input("Search anything... Example: Explain Retrieval-Augmen
     agent = create_agent(
         model=llm,
         tools=tools,
-        system_prompt="You are a helpful AI assistant."
+        system_prompt="""You are an AI Research Assistant.
+Use the available tools whenever external, current, or research-based
+information is needed. Search the most relevant source and provide
+a clear, accurate and well-structured response."""
     )
 
     with st.chat_message("assistant"):
@@ -372,11 +375,7 @@ if prompt := st.chat_input("Search anything... Example: Explain Retrieval-Augmen
         )
         with st.status("Searching...",expanded=True) as status:
 
-            st.write("🌐 Searching Web")
-
-            st.write("📖 Reading Wikipedia")
-
-            st.write("📚 Searching arXiv")
+            st.write("🧠 AI agent is selecting the best source...")
 
             response=agent.invoke(
                 {
