@@ -284,7 +284,7 @@ with col2:
 <div class="metric-card">
 <h2>🧠</h2>
 <h3>Model</h3>
-<h1>Llama 3</h1>
+<h1>GPT-OSS 120B</h1>
 </div>
 """,unsafe_allow_html=True)
 
