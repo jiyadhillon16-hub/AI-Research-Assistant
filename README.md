@@ -281,8 +281,14 @@ Possible improvements for future versions:
 * 📝 Automatic research report generation
 
 ## 📸 Demo
-
-
+![AI Research Assistant](assets/SE1.png)
+![AI Research Assistant](assets/SE2.png)
+![AI Research Assistant](assets/SE3.png)
+![AI Research Assistant](assets/SE4.png)
+![AI Research Assistant](assets/SE5.png)
+![AI Research Assistant](assets/SE6.png)
+![AI Research Assistant](assets/SE7.png)
+![AI Research Assistant](assets/SE8.png)
 
 ## 👩‍💻 Author
 
