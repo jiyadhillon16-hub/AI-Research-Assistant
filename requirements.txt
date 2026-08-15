@@ -7,3 +7,4 @@ langgraph
 arxiv==2.4.0
 wikipedia
 duckduckgo-search
+ddgs
