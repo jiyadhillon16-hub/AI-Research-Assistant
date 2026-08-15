@@ -104,15 +104,25 @@ box-shadow:0px 8px 25px rgba(0,0,0,.3);
 /* Chat */
 
 .stChatMessage{
+    background:#111827 !important;
+    border-radius:18px;
+    padding:12px;
+    margin-bottom:15px;
+}
 
-background:#111827;
+/* Chat message text */
+div[data-testid="stChatMessageContent"]{
+    color:white !important;
+}
 
-border-radius:18px;
+/* All text inside chat messages */
+div[data-testid="stChatMessageContent"] *{
+    color:white !important;
+}
 
-padding:12px;
-
-margin-bottom:15px;
-
+/* Thinking / Searching status */
+div[data-testid="stStatusWidget"] *{
+    color:white !important;
 }
 
 /* Sidebar */
@@ -362,10 +372,19 @@ if prompt := st.chat_input("Search anything... Example: Explain Retrieval-Augmen
         model=llm,
         tools=tools,
         system_prompt="""You are an AI Research Assistant.
-Use the available tools whenever external, current, or research-based
-information is needed. Search the most relevant source and provide
-a clear, accurate and well-structured response."""
-    )
+
+You have exactly three tools available:
+1. search - searches the web
+2. wikipedia - searches Wikipedia
+3. arxiv - searches research papers
+
+IMPORTANT:
+- You may ONLY call these three tools.
+- Never call a tool named open, browse, fetch, web, or any other tool.
+- Use search for general/current web information.
+- Use wikipedia for encyclopedia-style information.
+- Use arxiv for academic research papers.
+- After using the appropriate tool, provide a clear, accurate and well-structured response.""")
 
     with st.chat_message("assistant"):
 
@@ -393,7 +412,7 @@ a clear, accurate and well-structured response."""
 
             assistant_response = response["messages"][-1].content
 
-            st.markdown("### 🤖 AI Response")
+            st.markdown('<h3 style="color:white;">🤖 AI Response</h3>', unsafe_allow_html=True)
 
             st.markdown(
             f"""
